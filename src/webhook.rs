@@ -25,7 +25,7 @@ fn process_payload(payload: &Value) -> String {
     let val_loss = payload["val_loss"].as_f64().unwrap_or(0.0);
 
     format!(
-        "Accuracy: {:.6}\nLoss: {:.6}\nValidation Accuracy: {:.6}\nValidation Loss: {:.6}",
+        "Accuracy: {:.3}\nLoss: {:.3}\nValidation Accuracy: {:.3}\nValidation Loss: {:.3}",
         accuracy,  loss, val_accuracy, val_loss
     )
 }
