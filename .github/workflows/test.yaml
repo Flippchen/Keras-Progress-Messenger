@@ -27,7 +27,7 @@ jobs:
       - name: Export Cargo build
         run: |
           mkdir -p build_output
-          cp target/release/my_binary build_output/
+          cp target/release/keras_training_notifier build_output/
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
