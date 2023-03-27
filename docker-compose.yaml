@@ -1,0 +1,11 @@
+services:
+  knf:
+    image: Flippchen/knf
+    volumes:
+      - knf_data:/data
+    restart: unless-stopped
+    env_file:
+      - variables.env
+
+volumes:
+  knf_data:
