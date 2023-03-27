@@ -1,6 +1,6 @@
 services:
   knf:
-    image: Flippchen/knf
+    image: flippchen/knf
     volumes:
       - knf_data:/data
     restart: unless-stopped
