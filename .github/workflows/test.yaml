@@ -24,15 +24,11 @@ jobs:
           override: true
       - name: Build
         run: cargo build --release
-      - name: Export Cargo build
-        run: |
-          mkdir -p build_output
-          cp target/release/keras_training_notifier build_output/
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: build_output
-          path: build_output/
+          name: keras_training_notifier
+          path: target/release/keras_training_notifier
       - name: Run tests
         run: cargo test --verbose
 
