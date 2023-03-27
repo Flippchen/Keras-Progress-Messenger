@@ -1,11 +1,13 @@
 [package]
-name = "keras_notifier"
+name = "keras_training_notifier"
+description = "A simple notifier for Keras training after each epoch"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+openssl = { version="0.10.46", features=["vendored"] }
 hyper = { version = "0.14.25", features = ["full"] }
 tokio = { version = "1", features = ["full"] }
 serde = { version="1.0.156", features=["derive"] }
