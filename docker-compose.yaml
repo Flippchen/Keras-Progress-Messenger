@@ -2,5 +2,7 @@ services:
   knf:
     image: philbooyy/keras_training_notifier:latest
     restart: unless-stopped
+    ports:
+      - "9000:9000"
     env_file:
       - variables.env
