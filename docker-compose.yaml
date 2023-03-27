@@ -1,6 +1,6 @@
 services:
   knf:
-    image: flippchen/knf
+    image: philbooyy/keras_notifier
     volumes:
       - knf_data:/data
     restart: unless-stopped
