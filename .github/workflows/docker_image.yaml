@@ -46,9 +46,13 @@ jobs:
         run: cargo fmt
 
   clippy:
+
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - name: Clippy
+        run: cargo clippy
 
   publish_docker_image:
     needs: [ build, rustfmt, clippy ]
