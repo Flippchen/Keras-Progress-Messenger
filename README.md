@@ -2,6 +2,7 @@
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Flippchen/Keras-Progress-Messenger/binary.yaml?style=flat-square) ![Docker Pulls](https://img.shields.io/docker/pulls/philbooyy/keras_training_notifier?style=flat-square) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/philbooyy/keras_training_notifier?style=flat-square)
 
 Connect your Keras training to Discord and get notified after every epoch.
+Credits to [@mfloto](https://github.com/mfloto) for the inspiration.
 
 ## Installation
 You can `use docker-compose` to run the notifier. You can also build the docker image yourself.
