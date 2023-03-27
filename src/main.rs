@@ -39,7 +39,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         .parse::<u16>()
         .unwrap_or(9000);
     // Set the address to bind the server
-    let addr = SocketAddr::from(([127, 0, 0, 1], port));
+    let addr = SocketAddr::from(([0, 0, 0, 0], port));
 
     // Create a service function
     let make_svc = make_service_fn(|_conn| {
