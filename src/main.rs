@@ -34,7 +34,10 @@ async fn handle_request(req: Request<Body>) -> Result<Response<Body>, Error> {
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 
-    let port = env::var("PORT").as_f64().unwrap_or(9000);
+    let port = env::var("PORT")
+        .unwrap_or_else(|_| "9000".to_string())
+        .parse::<u16>()
+        .unwrap_or(9000);
     // Set the address to bind the server
     let addr = SocketAddr::from(([127, 0, 0, 1], port));
 
