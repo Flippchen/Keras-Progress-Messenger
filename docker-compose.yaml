@@ -1,6 +1,6 @@
 services:
   knf:
-    image: philbooyy/keras_notifier
+    image: philbooyy/keras_training_notifier:latest
     volumes:
       - knf_data:/data
     restart: unless-stopped
