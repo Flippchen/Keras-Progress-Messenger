@@ -1,11 +1,6 @@
 services:
   knf:
     image: philbooyy/keras_training_notifier:latest
-    volumes:
-      - knf_data:/data
     restart: unless-stopped
     env_file:
       - variables.env
-
-volumes:
-  knf_data:
