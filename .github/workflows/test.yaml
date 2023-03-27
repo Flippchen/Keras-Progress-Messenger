@@ -1,0 +1,63 @@
+name: Rust-Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+      - name: Add Toolchain
+        run: rustup add x86_64-unknown-linux-musl
+      - name: Build
+        run: cargo build --release --target x86_64-unknown-linux-musl
+      - name: Export Cargo build
+        run: |
+          mkdir -p build_output
+          cp target/release/my_binary build_output/
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build_output
+          path: build_output/
+      - name: Run tests
+        run: cargo test --verbose
+
+  rustfmt:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          components: rustfmt
+          override: true
+      - name: Format
+        run: cargo fmt
+
+  clippy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
