@@ -4,6 +4,8 @@
 Connect your Keras training to Discord and get notified after every epoch.
 Credits to [@mfloto](https://github.com/mfloto) for the inspiration.
 
+### Example Image
+![Example Image](assets/bot_example.png)
 ## Installation
 You can `use docker-compose` to run the notifier. You can also build the docker image yourself.
 For the docker-compose, you need to edit the `variables.env` file the following content:
